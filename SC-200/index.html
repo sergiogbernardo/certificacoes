@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Quiz SC-200 com resultado por área, revisão de erros e recomendações de estudo."
+    />
+    <title>SC-200 | Certificações Sabion Labs</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="module" src="../assets/sc200.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="../">S<span>✳</span>BION <small>LABS</small></a
+        ><a class="header-link" href="../">Certificações ↗</a>
+      </div>
+    </header>
+    <main class="wrap quiz-page">
+      <nav class="breadcrumb" aria-label="Caminho">
+        <a href="../">Certificações</a><span>/</span><strong>SC-200</strong>
+      </nav>
+      <section class="intro">
+        <p class="eyebrow">MICROSOFT / SEGURANÇA</p>
+        <h1>SC-200.<br /><em>Responda, revise, evolua.</em></h1>
+        <p class="lead">
+          Escolha um modo. Ao terminar, veja sua porcentagem de acertos, os
+          erros e as áreas do exame para estudar antes de tentar novamente.
+        </p>
+      </section>
+
+      <section id="setup" aria-labelledby="setup-title">
+        <div class="section-title">
+          <span>01 / ESCOLHA O MODO</span>
+          <h2 id="setup-title">Quanto quer praticar?</h2>
+        </div>
+        <div id="mode-list" class="mode-grid"></div>
+        <p class="bank-status" id="bank-status" role="status"></p>
+        <p class="source-note">
+          Banco em revisão. As questões iniciais são autorais, com fontes
+          técnicas. Os modos completos serão liberados quando houver perguntas
+          suficientes e revisadas.
+        </p>
+        <a
+          class="text-link"
+          href="https://learn.microsoft.com/pt-br/credentials/certifications/resources/study-guides/sc-200"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ver habilidades medidas no exame ↗</a
+        >
+      </section>
+
+      <section id="quiz" class="hidden" aria-labelledby="question-title">
+        <div class="quiz-top">
+          <span id="quiz-mode"></span><span id="quiz-progress"></span>
+        </div>
+        <div class="progress-track"><div id="progress-bar"></div></div>
+        <article class="question-card">
+          <p class="eyebrow" id="question-area"></p>
+          <h2 id="question-title"></h2>
+          <form id="answer-form" class="answer-list"></form>
+          <div class="quiz-actions">
+            <button class="secondary-button" id="back-button" type="button">
+              ← Anterior</button
+            ><button
+              class="primary-button"
+              id="next-button"
+              type="button"
+              disabled
+            >
+              Próxima →
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section id="results" class="hidden" aria-labelledby="result-title">
+        <div class="section-title">
+          <span>RESULTADO / SC-200</span>
+          <h2 id="result-title">Seu resultado</h2>
+        </div>
+        <div class="result-hero">
+          <div>
+            <strong id="result-percent">0%</strong
+            ><span id="result-count"></span>
+          </div>
+          <p id="result-message"></p>
+        </div>
+        <h3>Onde melhorar</h3>
+        <div id="area-results" class="area-results"></div>
+        <h3>Questões para revisar</h3>
+        <div id="wrong-answers" class="wrong-answers"></div>
+        <button
+          class="primary-button retry-button"
+          id="retry-button"
+          type="button"
+        >
+          Refazer o quiz completo ↻
+        </button>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <span>Sabion Labs · SC-200</span
+      ><span>Resultado de prática, sem equivalência com a nota oficial.</span>
+    </footer>
+  </body>
+</html>
