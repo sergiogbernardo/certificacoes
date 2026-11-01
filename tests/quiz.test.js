@@ -3,11 +3,16 @@ import assert from 'node:assert/strict';
 import { questions, areas, modes } from '../assets/sc200-questions.js';
 import { validateBank, shuffled, scoreQuiz } from '../assets/quiz-core.js';
 
-test('question bank has unique valid questions and locks unavailable modes', () => {
+test('150 questions are valid, unique, and enable every mode', () => {
   const bank = validateBank(questions, areas);
-  assert.equal(bank.length, questions.length);
+  assert.equal(bank.length, 150);
   assert.equal(new Set(bank.map((question) => question.id)).size, bank.length);
-  assert.ok(modes.every((mode) => bank.length < mode.count));
+  assert.ok(modes.every((mode) => bank.length >= mode.count));
+  assert.ok(bank.every((question) => new Set(question.options).size === 4));
+  assert.deepEqual(
+    Object.fromEntries(Object.keys(areas).map((area) => [area, bank.filter((question) => question.area === area).length])),
+    { ambiente: 64, resposta: 55, caca: 31 },
+  );
 });
 
 test('scores answers and identifies wrong question by area', () => {

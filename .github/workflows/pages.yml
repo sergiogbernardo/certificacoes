@@ -22,12 +22,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Validate question bank
+        run: |
+          python3 scripts/build-question-bank.py
+          git diff --exit-code -- assets/sc200-question-bank.js
+          npm test
       - name: Prepare static files
         run: |
           mkdir -p _site/SC-200 _site/assets
           cp index.html _site/index.html
           cp SC-200/index.html _site/SC-200/index.html
-          cp assets/styles.css assets/favicon.svg assets/sc200.js assets/sc200-questions.js assets/quiz-core.js _site/assets/
+          cp assets/styles.css assets/favicon.svg assets/sc200.js assets/sc200-questions.js assets/sc200-question-bank.js assets/quiz-core.js _site/assets/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

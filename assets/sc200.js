@@ -51,7 +51,7 @@ function renderModes() {
     list.append(button);
   }
   byId("bank-status").textContent =
-    `${bank.length} perguntas disponíveis para teste; as sessões de 50, 80 e 150 serão ativadas apenas com um banco revisado suficiente.`;
+    `${bank.length} perguntas disponíveis para prática. As questões estão em revisão editorial.`;
 }
 
 function start(count, label) {
