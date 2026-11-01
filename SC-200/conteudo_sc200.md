@@ -1,8 +1,10 @@
 # SC-200 — conteúdo extraído e banco inicial de perguntas
 
-**Coleta:** 30/10/2026. **Versão:** rascunho 2. **Escopo:** objetivos em inglês publicados para o exame a partir de 21/10/2026. A versão localizada pode seguir outro calendário.
+**Coleta inicial:** 30/10/2026. **Revisão parcial:** 31/10/2026. **Versão:** rascunho 3. **Escopo:** objetivos em inglês publicados para o exame a partir de 21/10/2026. A versão localizada pode seguir outro calendário.
 
 Este arquivo é a mesa de trabalho das questões e a fonte do banco usado pelo quiz. As 150 perguntas abaixo foram redigidas para estudo; não são transcrições de provas ou de bancos de terceiros. Os gabaritos têm apoio nas fontes técnicas indicadas, mas cada item ainda precisa de revisão editorial e checagem de ambiguidade. O quiz identifica o banco como material em revisão. Todas são de **resposta única**, com quatro alternativas.
+
+**Nesta revisão:** substituídas 11 questões repetidas por cenários de tópicos pouco cobertos e reescritas alternativas de outras 22 questões. O restante do banco ainda não recebeu uma revisão editorial individual.
 
 ## 1. Conteúdo que importa para o SC-200
 
@@ -92,6 +94,18 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 - **[M52]** [Configurar regras e exclusões ASR](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/enable-attack-surface-reduction)
 - **[M53]** [Threat analytics no Defender](https://learn.microsoft.com/en-us/defender-xdr/threat-analytics)
 - **[M54]** [Esquema da tabela EmailEvents](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-emailevents-table)
+- **[M55]** [Operador KQL project](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/project-operator)
+- **[M56]** [Operador KQL extend](https://learn.microsoft.com/azure/data-explorer/kusto/query/extendoperator)
+- **[M57]** [Esquema da tabela EmailUrlInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-emailurlinfo-table)
+- **[M58]** [Esquema da tabela EmailAttachmentInfo](https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-emailattachmentinfo-table)
+- **[M59]** [Notificações de incidentes no Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/m365d-notifications-incidents)
+- **[M60]** [Coleta personalizada no Defender for Endpoint](https://learn.microsoft.com/en-us/defender-endpoint/custom-data-collection)
+- **[M61]** [Página de entidade do e-mail no Defender](https://learn.microsoft.com/en-us/defender-office-365/mdo-email-entity-page)
+- **[M62]** [Resultados da interrupção automática de ataques](https://learn.microsoft.com/en-us/defender-xdr/autoad-results)
+- **[M63]** [Casos de incidente no Defender](https://learn.microsoft.com/en-us/defender-xdr/investigate-incident-cases)
+- **[M64]** [Notificações de alertas no Defender XDR](https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications)
+- **[M65]** [Execução de regras de automação do Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/create-manage-use-automation-rules)
+- **[M66]** [Parâmetros de Workbooks](https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-parameters)
 
 ## 4. Banco inicial — ambiente de operações (Q001–Q026)
 
@@ -109,7 +123,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q003 — Regra existente não dispara
 **Pergunta:** Uma regra pronta consulta SecurityEvent, mas a coleta via WEF grava em WindowsEvent. Qual é a primeira verificação útil?
-**Opções:** A) A cor do workbook · B) O idioma do portal · C) A tabela consultada pela regra · D) O nome do grupo de recursos
+**Opções:** A) Alterar a frequência de execução da regra · B) Revisar apenas a gravidade do incidente · C) A tabela consultada pela regra · D) Trocar o parâmetro de tempo do workbook
 **Resposta:** C. A regra pode não encontrar os eventos porque consulta outra tabela; adapte a consulta ou o conector.
 **Fonte:** [M02]. **Estado:** rascunho com fonte.
 
@@ -193,7 +207,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q017 — Limiar da regra
 **Pergunta:** Em uma regra agendada, a consulta retorna linhas, mas você só quer alertar acima de determinada quantidade. Que configuração usar?
-**Opções:** A) Limiar do alerta · B) Nome do workspace · C) Tema do portal · D) Plano de identidade
+**Opções:** A) Limiar do alerta · B) Aumentar a janela de consulta · C) Alterar o agrupamento de alertas · D) Mapear entidades adicionais
 **Resposta:** A. O limiar determina quantos resultados são necessários para gerar o alerta.
 **Fonte:** [M06]. **Estado:** rascunho com fonte.
 
@@ -234,8 +248,8 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Fonte:** [M09]. **Estado:** rascunho com fonte.
 
 ### Q024 — Ação de detecção personalizada
-**Pergunta:** Uma detecção personalizada encontrou dispositivos suspeitos. Qual ação automática pode ser configurada para resultados que incluam a identidade do dispositivo?
-**Opções:** A) Alterar o tema do portal · B) Criar caixa postal · C) Renomear o workspace · D) Isolar o dispositivo
+**Pergunta:** Uma detecção personalizada encontrou um dispositivo suspeito e a equipe precisa conter sua comunicação de rede. Qual ação de resposta é adequada?
+**Opções:** A) Coletar o pacote de investigação · B) Adicionar uma etiqueta ao dispositivo · C) Executar uma varredura antivírus · D) Isolar o dispositivo
 **Resposta:** D. Regras de detecção personalizadas podem iniciar ações de resposta em dispositivos identificados no resultado.
 **Fonte:** [M09]. **Estado:** rascunho com fonte.
 
@@ -267,7 +281,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q029 — Histórico de ações
 **Pergunta:** Onde verificar o andamento de uma ação de resposta iniciada no Defender?
-**Opções:** A) Action center · B) Workbook do Azure Monitor · C) DCR · D) Página de preços
+**Opções:** A) Action center · B) Grafo do incidente · C) Linha do tempo do dispositivo · D) Página de entidade do e-mail
 **Resposta:** A. O Action center reúne status e histórico de ações de resposta.
 **Fonte:** [M13], [M28]. **Estado:** rascunho com fonte.
 
@@ -291,13 +305,13 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q033 — Linha do tempo do dispositivo
 **Pergunta:** Para relacionar processos, arquivos e conexões observados em um endpoint, qual vista é especialmente útil?
-**Opções:** A) Device timeline · B) Sitemaps · C) Azure Policy compliance apenas · D) Página de cobrança
+**Opções:** A) Device timeline · B) Grafo do incidente XDR · C) Página de entidade do e-mail · D) Relatório de entradas do Entra
 **Resposta:** A. A linha do tempo ajuda a reconstruir atividades do dispositivo.
 **Fonte:** [M13]. **Estado:** rascunho com fonte.
 
 ### Q034 — Ações dependentes do dispositivo
 **Pergunta:** Uma ação de resposta não aparece para determinado endpoint. Qual hipótese deve ser checada antes de concluir que o produto falhou?
-**Opções:** A) Cor do gráfico · B) Suporte do sistema, versão, onboarding e permissões · C) Ordem alfabética do usuário · D) Tamanho do nome do incidente
+**Opções:** A) Ajuste da janela da regra analítica · B) Suporte do sistema, versão, onboarding e permissões · C) Retenção da tabela no Sentinel · D) Filtro de tempo do workbook
 **Resposta:** B. Ações disponíveis variam conforme dispositivo, sistema, versão e acesso.
 **Fonte:** [M13], [M14]. **Estado:** rascunho com fonte.
 
@@ -309,7 +323,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q036 — Histórico do incidente
 **Pergunta:** Qual vista do incidente do Sentinel ajuda a conferir ações já executadas por automações e comentários da equipe?
-**Opções:** A) Billing · B) DCR · C) Resource locks · D) Activity log
+**Opções:** A) Aba de entidades · B) Aba de logs · C) Lista de tarefas · D) Activity log
 **Resposta:** D. O registro de atividades contém ações e comentários do incidente.
 **Fonte:** [M15]. **Estado:** rascunho com fonte.
 
@@ -327,13 +341,13 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q039 — Endereço IP de incidente
 **Pergunta:** Para verificar geolocalização e contexto de um IP ligado a um incidente do Sentinel, qual objeto deve ser aberto?
-**Opções:** A) Nome do playbook · B) Configuração do favicon · C) Entidade do endereço IP · D) DCR
+**Opções:** A) Detalhe da regra analítica · B) Entidade do dispositivo · C) Entidade do endereço IP · D) Histórico do playbook
 **Resposta:** C. A página/detalhe da entidade IP reúne dados contextuais, inclusive geolocalização quando disponível.
 **Fonte:** [M15]. **Estado:** rascunho com fonte.
 
 ### Q040 — Sinalização de identidade
 **Pergunta:** Um alerta de risco de usuário no Entra ID Protection precisa de triagem. Qual evidência inicial é apropriada?
-**Opções:** A) Apenas nome do tenant · B) Tema do portal · C) Número de workbooks · D) Histórico de entradas, aplicativo, dispositivo, local e IP
+**Opções:** A) Somente etiquetas do dispositivo · B) Somente assunto dos e-mails · C) Somente volume de alertas por dia · D) Histórico de entradas, aplicativo, dispositivo, local e IP
 **Resposta:** D. O fluxo recomendado compara esses atributos ao padrão conhecido do usuário.
 **Fonte:** [M16]. **Estado:** rascunho com fonte.
 
@@ -367,11 +381,11 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** A. Threat Explorer permite investigar e filtrar e-mails suspeitos.
 **Fonte:** [M19]. **Estado:** rascunho com fonte.
 
-### Q046 — Remediação de mensagens
-**Pergunta:** Onde verificar o histórico de uma remediação de e-mail iniciada pelo Explorer ou por investigação automática?
-**Opções:** A) DCR · B) Action center · C) Device timeline somente · D) Workbooks
-**Resposta:** B. O histórico de remediações de e-mail aparece no Action center.
-**Fonte:** [M28]. **Estado:** rascunho com fonte.
+### Q046 — Análise de uma mensagem
+**Pergunta:** O analista precisa examinar os cabeçalhos, anexos, URLs e vereditos de uma mensagem específica. Qual vista é a mais direta?
+**Opções:** A) Threat Explorer para busca ampla · B) Página de entidade do e-mail · C) Action center de remediação · D) Microsoft Purview Audit
+**Resposta:** B. A página de entidade reúne evidências e detalhes de uma mensagem individual.
+**Fonte:** [M61]. **Estado:** rascunho com fonte.
 
 ### Q047 — Conteúdo de investigação
 **Pergunta:** Uma investigação precisa localizar documentos e mensagens relevantes em Exchange, SharePoint, OneDrive e Teams. Qual recurso do Purview usar?
@@ -453,11 +467,11 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** C. KQL jobs permitem consultas assíncronas históricas com joins e unions.
 **Fonte:** [M26]. **Estado:** rascunho com fonte.
 
-### Q060 — Agregação persistente
-**Pergunta:** Qual recurso executa agregações frequentes e grava resultados resumidos em uma tabela do Analytics para consultas posteriores?
-**Opções:** A) Live response · B) Playbook manual · C) EDiscovery search · D) Summary rule
-**Resposta:** D. Summary rules persistem resultados agregados em tabelas de análise.
-**Fonte:** [M26], [M29]. **Estado:** rascunho com fonte.
+### Q060 — Selecionar colunas em KQL
+**Pergunta:** Uma consulta retorna muitas colunas, mas a equipe quer manter somente Timestamp, DeviceName e FileName no resultado. Qual operador usar?
+**Opções:** A) extend Timestamp, DeviceName, FileName · B) summarize Timestamp, DeviceName, FileName · C) join Timestamp, DeviceName, FileName · D) project Timestamp, DeviceName, FileName
+**Resposta:** D. project retorna apenas as colunas especificadas, na ordem indicada.
+**Fonte:** [M55]. **Estado:** rascunho com fonte.
 
 ## 7. Ampliação — ambiente de operações (Q061–Q098)
 
@@ -515,15 +529,15 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** A. Excluir da correlação evita que a detecção participe da correlação padrão; regras de agrupamento ainda devem ser consideradas.
 **Fonte:** [M49]. **Estado:** rascunho com fonte.
 
-### Q070 — Base da detecção personalizada
-**Pergunta:** Uma regra de detecção personalizada do Defender XDR é construída principalmente a partir de quê?
-**Opções:** A) Planilha de incidentes · B) Consulta de caça avançada · C) Backup do dispositivo · D) Resultado do eDiscovery
-**Resposta:** B. A regra executa uma consulta de advanced hunting em intervalos.
-**Fonte:** [M31]. **Estado:** rascunho com fonte.
+### Q070 — Notificação de incidentes
+**Pergunta:** O SOC precisa receber e-mail quando surgir um incidente de uma fonte e gravidade específicas no Defender XDR. O que configurar?
+**Opções:** A) Regra de ajuste de alertas · B) Regra de notificação de incidentes · C) Detecção personalizada sem destinatários · D) Parâmetro de workbook
+**Resposta:** B. A notificação de incidentes pode usar filtros como fonte e gravidade e enviar aos destinatários definidos.
+**Fonte:** [M59]. **Estado:** rascunho com fonte.
 
 ### Q071 — Resultado da detecção
 **Pergunta:** Quando uma detecção personalizada encontra eventos correspondentes, o que ela pode gerar?
-**Opções:** A) Apenas uma imagem PNG · B) Novo tenant · C) Alertas e ações de resposta configuradas · D) Certificado TLS
+**Opções:** A) Apenas uma consulta salva · B) Apenas um workbook · C) Alertas e ações de resposta configuradas · D) Apenas um conector de dados
 **Resposta:** C. A regra pode gerar alertas e disparar ações de resposta conforme a configuração.
 **Fonte:** [M31]. **Estado:** rascunho com fonte.
 
@@ -553,7 +567,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q076 — Interrupção de ataque
 **Pergunta:** Qual é a finalidade principal da interrupção automática de ataques no Defender XDR?
-**Opções:** A) Criar dashboards estéticos · B) Renovar licenças · C) Substituir retenção de logs · D) Conter rapidamente entidades comprometidas durante ataques de alta confiança
+**Opções:** A) Classificar alertas sem agir sobre entidades · B) Agregar logs históricos para relatórios · C) Criar recomendações de postura sem contenção · D) Conter rapidamente entidades comprometidas durante ataques de alta confiança
 **Resposta:** D. O recurso executa contenções para interromper a progressão do ataque.
 **Fonte:** [M47]. **Estado:** rascunho com fonte.
 
@@ -583,7 +597,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q081 — Condição de automação
 **Pergunta:** Para executar um playbook somente em incidentes de alta gravidade, o que combinar na regra de automação?
-**Opções:** A) Gatilho, condição de gravidade e ação de playbook · B) Apenas nome do workspace · C) Somente cor da etiqueta · D) Apenas período de retenção
+**Opções:** A) Gatilho, condição de gravidade e ação de playbook · B) Somente o gatilho de criação do incidente · C) Somente a condição de gravidade · D) Somente o playbook sem regra de automação
 **Resposta:** A. A regra avalia condições antes de executar ações.
 **Fonte:** [M46]. **Estado:** rascunho com fonte.
 
@@ -647,11 +661,11 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** C. A otimização do SOC reúne recomendações orientadas à cobertura e ao uso de dados.
 **Fonte:** [M34]. **Estado:** rascunho com fonte.
 
-### Q092 — Workbook
-**Pergunta:** A equipe precisa de um painel visual compartilhável que combine consultas e métricas de logs do Sentinel. Qual recurso criar?
-**Opções:** A) DCR · B) Isolate device · C) eDiscovery case · D) Workbook
-**Resposta:** D. Workbooks apresentam dados e visualizações de monitoramento.
-**Fonte:** [M10]. **Estado:** rascunho com fonte.
+### Q092 — Filtro de tempo no workbook
+**Pergunta:** O analista quer trocar o período exibido em vários gráficos de um workbook sem editar cada consulta. Qual componente adicionar?
+**Opções:** A) Regra analítica NRT · B) DCR para cada gráfico · C) Filtro KQL fixo em cada consulta · D) Parâmetro de intervalo de tempo
+**Resposta:** D. Parâmetros permitem que o usuário altere o intervalo e o reutilize nas visualizações vinculadas.
+**Fonte:** [M66]. **Estado:** rascunho com fonte.
 
 ### Q093 — Analytics versus Data lake
 **Pergunta:** Qual camada do Sentinel é voltada a detecções e consultas interativas de baixa latência?
@@ -659,11 +673,11 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** A. Analytics é a camada operacional para análise e alertas interativos.
 **Fonte:** [M05]. **Estado:** rascunho com fonte.
 
-### Q094 — Histórico extenso
-**Pergunta:** A equipe quer conservar grande volume de dados para análise histórica com custo adequado. Qual camada considerar?
-**Opções:** A) Apenas regras NRT · B) Data lake · C) Live response · D) Threat Explorer
-**Resposta:** B. O data lake é direcionado a retenção extensa e investigação histórica.
-**Fonte:** [M05]. **Estado:** rascunho com fonte.
+### Q094 — Telemetria adicional de endpoint
+**Pergunta:** O Defender for Endpoint coleta a telemetria padrão, mas o SOC precisa capturar eventos específicos com filtros e enviá-los ao Sentinel. Qual recurso usar?
+**Opções:** A) Regra de detecção personalizada do Defender XDR · B) Regra de coleta personalizada do Defender for Endpoint · C) Workbook do Sentinel · D) Regra de ajuste de alertas
+**Resposta:** B. A coleta personalizada adiciona eventos filtrados à telemetria padrão e os encaminha ao workspace do Sentinel.
+**Fonte:** [M60]. **Estado:** rascunho com fonte.
 
 ### Q095 — Regra NRT
 **Pergunta:** Qual característica distingue uma regra analítica NRT no Sentinel?
@@ -671,21 +685,21 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** C. Regras NRT oferecem cadência próxima do tempo real.
 **Fonte:** [M07]. **Estado:** rascunho com fonte.
 
-### Q096 — Regra agendada
-**Pergunta:** Uma consulta KQL deve rodar periodicamente e gerar alertas quando a contagem ultrapassar um limiar. Qual regra criar?
-**Opções:** A) Workbook sem consulta · B) ASR exclusion · C) Live response session · D) Scheduled analytics rule
-**Resposta:** D. A regra agendada permite definir frequência, consulta e limiar.
-**Fonte:** [M06]. **Estado:** rascunho com fonte.
+### Q096 — Notificação de alertas
+**Pergunta:** A equipe quer e-mail apenas para alertas de gravidade alta em grupos de dispositivos definidos. O que configurar?
+**Opções:** A) Notificação de atualização de threat analytics · B) Regra de notificação de incidentes sem filtro de dispositivo · C) Regra de supressão de alertas · D) Regra de notificação de alertas com gravidade e escopo de dispositivos
+**Resposta:** D. Notificações de alerta aceitam filtros de gravidade e grupos de dispositivos, além dos destinatários.
+**Fonte:** [M64]. **Estado:** rascunho com fonte.
 
-### Q097 — Playbook
-**Pergunta:** Um incidente precisa acionar um fluxo que consulte uma API externa e publique uma atualização no ticket. Que tecnologia sustenta um playbook do Sentinel?
-**Opções:** A) Azure Logic Apps · B) Windows Event Forwarding · C) KQL join · D) Microsoft Graph activity log
-**Resposta:** A. Playbooks do Sentinel são fluxos do Logic Apps.
-**Fonte:** [M08]. **Estado:** rascunho com fonte.
+### Q097 — Ordem de automação
+**Pergunta:** Duas regras de automação podem alterar o mesmo incidente no Sentinel. Que configuração ajuda a controlar qual delas atua primeiro?
+**Opções:** A) Ordem ou prioridade de execução das regras · B) Tipo de gatilho da regra · C) Gravidade usada na condição · D) Intervalo de retenção do incidente
+**Resposta:** A. As regras de automação são executadas sequencialmente na ordem definida.
+**Fonte:** [M65]. **Estado:** rascunho com fonte.
 
 ### Q098 — Permissão para playbook
 **Pergunta:** Um analista consegue ver incidentes, mas não executar manualmente um playbook. Qual área deve ser revisada?
-**Opções:** A) Idioma do navegador · B) Permissões do Sentinel e do recurso Logic App · C) Tamanho da janela · D) Nome do dispositivo
+**Opções:** A) Configuração de retenção das tabelas · B) Permissões do Sentinel e do recurso Logic App · C) Tempo limite da consulta analítica · D) Grupo de dispositivos do Endpoint
 **Resposta:** B. A execução manual depende de permissões sobre incidente e playbook.
 **Fonte:** [M04], [M08]. **Estado:** rascunho com fonte.
 
@@ -693,7 +707,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q099 — Priorização em nuvem
 **Pergunta:** No Defender for Cloud, qual atributo deve pesar na triagem inicial de vários alertas?
-**Opções:** A) Cor do portal · B) Ordem alfabética do título · C) Gravidade do alerta e recurso afetado · D) Número de workbooks
+**Opções:** A) Somente o horário de criação · B) Somente o status atual · C) Gravidade do alerta e recurso afetado · D) Somente o título do alerta
 **Resposta:** C. A triagem considera gravidade, contexto e recursos afetados.
 **Fonte:** [M38]. **Estado:** rascunho com fonte.
 
@@ -711,7 +725,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q102 — Alerta benigno em nuvem
 **Pergunta:** A investigação confirma que um alerta do Defender for Cloud reflete atividade esperada. O que verificar antes de suprimir ocorrências semelhantes?
-**Opções:** A) Apenas a cor da severidade · B) Escopo e características precisas da atividade · C) Número de perguntas do exame · D) Nome do navegador
+**Opções:** A) Suprimir todos os alertas da assinatura · B) Escopo e características precisas da atividade · C) Reduzir a gravidade sem validar a causa · D) Encerrar a coleta da fonte
 **Resposta:** B. Supressão deve ser específica após validação da causa benigna.
 **Fonte:** [M38]. **Estado:** rascunho com fonte.
 
@@ -747,7 +761,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q108 — Alerta de Identity
 **Pergunta:** Qual seção de um alerta do Defender for Identity mostra a sequência e as entidades envolvidas?
-**Opções:** A) Billing history · B) Data lake retention · C) ASR exclusions · D) What happened
+**Opções:** A) Alert graph · B) Comments & history · C) Alert details · D) What happened
 **Resposta:** D. A seção apresenta linha do tempo e entidades.
 **Fonte:** [M42]. **Estado:** rascunho com fonte.
 
@@ -765,13 +779,13 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q111 — Incidente multidomínio
 **Pergunta:** Um mesmo ataque envolve e-mail, identidade e endpoint. Qual vantagem de investigar o incidente correlacionado no Defender XDR?
-**Opções:** A) Eliminar necessidade de evidência · B) Converter logs em licenças · C) Relacionar alertas e entidades em uma história única · D) Substituir todas as respostas humanas
+**Opções:** A) Dispensar a investigação de entidades · B) Tratar todos os alertas como verdadeiros · C) Relacionar alertas e entidades em uma história única · D) Executar automaticamente todas as remediações
 **Resposta:** C. A correlação reúne sinais de vários domínios para triagem.
 **Fonte:** [M49], [M00]. **Estado:** rascunho com fonte.
 
 ### Q112 — Triage com Copilot
 **Pergunta:** Uma resposta guiada do Security Copilot recomenda classificar um incidente. A que categoria de recomendação isso pertence?
-**Opções:** A) Retention · B) Ingestion · C) Billing · D) Triage
+**Opções:** A) Containment · B) Investigation · C) Remediation · D) Triage
 **Resposta:** D. As respostas guiadas incluem recomendações de triagem.
 **Fonte:** [M39]. **Estado:** rascunho com fonte.
 
@@ -789,7 +803,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q115 — Permissão de ação
 **Pergunta:** Um botão de resposta guiada aparece desabilitado para o analista. Qual causa documentada deve ser checada?
-**Opções:** A) Tamanho da tela · B) Nome do incidente · C) Permissão RBAC insuficiente · D) Ordem dos cartões
+**Opções:** A) Ausência de incidentes semelhantes · B) Ordem dos cartões de recomendação · C) Permissão RBAC insuficiente · D) Falta de um workbook no Sentinel
 **Resposta:** C. Ações indisponíveis podem refletir permissões insuficientes.
 **Fonte:** [M39]. **Estado:** rascunho com fonte.
 
@@ -807,7 +821,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 
 ### Q118 — Ataque interrompido
 **Pergunta:** A interrupção automática isolou um dispositivo. O que o analista deve verificar no incidente?
-**Opções:** A) Apenas o nome do produto · B) Ação executada, entidade afetada e escopo residual do ataque · C) Somente o tema do portal · D) Número de páginas do workbook
+**Opções:** A) Apenas a data de onboarding do dispositivo · B) Ação executada, entidade afetada e escopo residual do ataque · C) Fechar o incidente sem avaliar outras entidades · D) Liberar a contenção antes de investigar
 **Resposta:** B. Contenção automática exige avaliação do resultado e investigação do restante do ataque.
 **Fonte:** [M47]. **Estado:** rascunho com fonte.
 
@@ -841,15 +855,15 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** C. A triagem deve confrontar o risco com o padrão legítimo e outras evidências.
 **Fonte:** [M16]. **Estado:** rascunho com fonte.
 
-### Q124 — Evidência do dispositivo
-**Pergunta:** Qual ação produz dados para análise forense sem exigir uma sessão interativa de comandos no endpoint?
-**Opções:** A) Live response · B) Delete device · C) Summary rule · D) Collect investigation package
-**Resposta:** D. O pacote reúne evidências para análise posterior.
-**Fonte:** [M13]. **Estado:** rascunho com fonte.
+### Q124 — Efeito da interrupção automática
+**Pergunta:** O Defender XDR conteve ativos durante um ataque. Onde o analista vê um resumo das ações no contexto do incidente?
+**Opções:** A) Pacote de investigação de um único endpoint · B) Workbook de ingestão do Sentinel · C) Registro de configuração da DCR · D) Cartão de resumo da interrupção automática no incidente
+**Resposta:** D. O cartão do incidente mostra as ações de interrupção e os ativos relacionados.
+**Fonte:** [M62]. **Estado:** rascunho com fonte.
 
 ### Q125 — Processo suspeito
 **Pergunta:** A linha do tempo mostra um processo iniciado logo após download de anexo. Que contexto investigar em seguida?
-**Opções:** A) Processo pai, arquivo, usuário e conexões relacionadas · B) Apenas fuso horário do portal · C) Cor da severidade · D) Nome do workbook
+**Opções:** A) Processo pai, arquivo, usuário e conexões relacionadas · B) Somente o hash do anexo · C) Somente o remetente da mensagem · D) Somente a gravidade do alerta
 **Resposta:** A. Relações entre processo, arquivo, usuário e rede ajudam a reconstruir a cadeia.
 **Fonte:** [M13], [M22]. **Estado:** rascunho com fonte.
 
@@ -881,7 +895,7 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Pergunta:** Um incidente longo reúne evidências, hipóteses e tarefas de vários analistas. Qual prática melhora a continuidade?
 **Opções:** A) Manter tudo na memória de um analista · B) Registrar decisões, responsáveis e evidências no gerenciamento do caso · C) Alterar o nome a cada hora · D) Apagar comentários antigos
 **Resposta:** B. O gerenciamento do caso mantém rastreabilidade da resposta colaborativa.
-**Fonte:** [M00], [M15]. **Estado:** rascunho com fonte.
+**Fonte:** [M63]. **Estado:** rascunho com fonte.
 
 ### Q131 — Reabertura
 **Pergunta:** Um incidente fechado recebe nova evidência confiável relacionada ao mesmo ataque. Qual ação operacional é coerente?
@@ -963,17 +977,17 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** C. Threat analytics reúne relatórios de ameaças e contexto de exposição.
 **Fonte:** [M53]. **Estado:** rascunho com fonte.
 
-### Q144 — Caça a conexão
-**Pergunta:** Uma hipótese envolve processos que abriram conexões para um IP suspeito. Qual tabela da caça avançada é o ponto inicial mais direto?
-**Opções:** A) EmailEvents · B) DeviceFileEvents · C) IdentityInfo · D) DeviceNetworkEvents
-**Resposta:** D. Ela registra eventos de conexão de rede de endpoints.
-**Fonte:** [M22]. **Estado:** rascunho com fonte.
+### Q144 — URL em mensagem
+**Pergunta:** Uma hipótese de phishing parte de uma URL presente no corpo ou anexo de e-mails. Qual tabela da caça avançada contém essas URLs?
+**Opções:** A) EmailEvents · B) EmailAttachmentInfo · C) DeviceNetworkEvents · D) EmailUrlInfo
+**Resposta:** D. EmailUrlInfo registra URLs extraídas de mensagens e anexos processados pelo Defender for Office 365.
+**Fonte:** [M57]. **Estado:** rascunho com fonte.
 
-### Q145 — Caça a anexo
-**Pergunta:** Para relacionar remetente, destinatário e mensagem em uma campanha de phishing, qual tabela da caça avançada iniciar?
-**Opções:** A) EmailEvents · B) DeviceProcessEvents · C) AzureActivity · D) Syslog
-**Resposta:** A. EmailEvents fornece metadados de mensagens e estado de entrega.
-**Fonte:** [M54]. **Estado:** rascunho com fonte.
+### Q145 — Hash de anexo
+**Pergunta:** A equipe quer caçar mensagens que carregaram um arquivo anexo identificado por hash. Qual tabela contém informações dos anexos?
+**Opções:** A) EmailAttachmentInfo · B) EmailUrlInfo · C) EmailEvents · D) DeviceProcessEvents
+**Resposta:** A. EmailAttachmentInfo contém dados de anexos, incluindo nome e hashes quando disponíveis.
+**Fonte:** [M58]. **Estado:** rascunho com fonte.
 
 ### Q146 — Filtrar no tempo
 **Pergunta:** Qual expressão KQL limita eventos às últimas 24 horas usando Timestamp?
@@ -999,12 +1013,11 @@ O [guia oficial](https://learn.microsoft.com/en-us/credentials/certifications/re
 **Resposta:** A. Search jobs pesquisam dados históricos de uma tabela e disponibilizam resultados para análise.
 **Fonte:** [M26]. **Estado:** rascunho com fonte.
 
-### Q150 — Agregado para caça
-**Pergunta:** Um grande volume de eventos deve ser condensado regularmente para consultas rápidas sobre tendências. Qual mecanismo do Sentinel usar?
-**Opções:** A) Isolate device · B) Summary rule · C) Alert tuning · D) eDiscovery case
-**Resposta:** B. Summary rules geram tabelas agregadas a partir de dados de alto volume.
-**Fonte:** [M26], [M29]. **Estado:** rascunho com fonte.
-
+### Q150 — Coluna calculada em KQL
+**Pergunta:** A consulta deve acrescentar Duration = EndTime - StartTime sem descartar as colunas originais. Qual operador usar?
+**Opções:** A) project · B) extend · C) summarize · D) where
+**Resposta:** B. extend adiciona uma coluna calculada ao conjunto de resultados e mantém as demais colunas.
+**Fonte:** [M56]. **Estado:** rascunho com fonte.
 
 ## 10. Próxima rodada de revisão
 

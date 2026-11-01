@@ -34,10 +34,10 @@ export const questions = [
     "area": "ambiente",
     "prompt": "Uma regra pronta consulta SecurityEvent, mas a coleta via WEF grava em WindowsEvent. Qual é a primeira verificação útil?",
     "options": [
-      "A cor do workbook",
-      "O idioma do portal",
+      "Alterar a frequência de execução da regra",
+      "Revisar apenas a gravidade do incidente",
       "A tabela consultada pela regra",
-      "O nome do grupo de recursos"
+      "Trocar o parâmetro de tempo do workbook"
     ],
     "answer": 2,
     "explanation": "A regra pode não encontrar os eventos porque consulta outra tabela; adapte a consulta ou o conector.",
@@ -231,9 +231,9 @@ export const questions = [
     "prompt": "Em uma regra agendada, a consulta retorna linhas, mas você só quer alertar acima de determinada quantidade. Que configuração usar?",
     "options": [
       "Limiar do alerta",
-      "Nome do workspace",
-      "Tema do portal",
-      "Plano de identidade"
+      "Aumentar a janela de consulta",
+      "Alterar o agrupamento de alertas",
+      "Mapear entidades adicionais"
     ],
     "answer": 0,
     "explanation": "O limiar determina quantos resultados são necessários para gerar o alerta.",
@@ -326,11 +326,11 @@ export const questions = [
   {
     "id": "SC200-024",
     "area": "ambiente",
-    "prompt": "Uma detecção personalizada encontrou dispositivos suspeitos. Qual ação automática pode ser configurada para resultados que incluam a identidade do dispositivo?",
+    "prompt": "Uma detecção personalizada encontrou um dispositivo suspeito e a equipe precisa conter sua comunicação de rede. Qual ação de resposta é adequada?",
     "options": [
-      "Alterar o tema do portal",
-      "Criar caixa postal",
-      "Renomear o workspace",
+      "Coletar o pacote de investigação",
+      "Adicionar uma etiqueta ao dispositivo",
+      "Executar uma varredura antivírus",
       "Isolar o dispositivo"
     ],
     "answer": 3,
@@ -399,9 +399,9 @@ export const questions = [
     "prompt": "Onde verificar o andamento de uma ação de resposta iniciada no Defender?",
     "options": [
       "Action center",
-      "Workbook do Azure Monitor",
-      "DCR",
-      "Página de preços"
+      "Grafo do incidente",
+      "Linha do tempo do dispositivo",
+      "Página de entidade do e-mail"
     ],
     "answer": 0,
     "explanation": "O Action center reúne status e histórico de ações de resposta.",
@@ -455,9 +455,9 @@ export const questions = [
     "prompt": "Para relacionar processos, arquivos e conexões observados em um endpoint, qual vista é especialmente útil?",
     "options": [
       "Device timeline",
-      "Sitemaps",
-      "Azure Policy compliance apenas",
-      "Página de cobrança"
+      "Grafo do incidente XDR",
+      "Página de entidade do e-mail",
+      "Relatório de entradas do Entra"
     ],
     "answer": 0,
     "explanation": "A linha do tempo ajuda a reconstruir atividades do dispositivo.",
@@ -468,10 +468,10 @@ export const questions = [
     "area": "resposta",
     "prompt": "Uma ação de resposta não aparece para determinado endpoint. Qual hipótese deve ser checada antes de concluir que o produto falhou?",
     "options": [
-      "Cor do gráfico",
+      "Ajuste da janela da regra analítica",
       "Suporte do sistema, versão, onboarding e permissões",
-      "Ordem alfabética do usuário",
-      "Tamanho do nome do incidente"
+      "Retenção da tabela no Sentinel",
+      "Filtro de tempo do workbook"
     ],
     "answer": 1,
     "explanation": "Ações disponíveis variam conforme dispositivo, sistema, versão e acesso.",
@@ -496,9 +496,9 @@ export const questions = [
     "area": "resposta",
     "prompt": "Qual vista do incidente do Sentinel ajuda a conferir ações já executadas por automações e comentários da equipe?",
     "options": [
-      "Billing",
-      "DCR",
-      "Resource locks",
+      "Aba de entidades",
+      "Aba de logs",
+      "Lista de tarefas",
       "Activity log"
     ],
     "answer": 3,
@@ -538,10 +538,10 @@ export const questions = [
     "area": "resposta",
     "prompt": "Para verificar geolocalização e contexto de um IP ligado a um incidente do Sentinel, qual objeto deve ser aberto?",
     "options": [
-      "Nome do playbook",
-      "Configuração do favicon",
+      "Detalhe da regra analítica",
+      "Entidade do dispositivo",
       "Entidade do endereço IP",
-      "DCR"
+      "Histórico do playbook"
     ],
     "answer": 2,
     "explanation": "A página/detalhe da entidade IP reúne dados contextuais, inclusive geolocalização quando disponível.",
@@ -552,9 +552,9 @@ export const questions = [
     "area": "resposta",
     "prompt": "Um alerta de risco de usuário no Entra ID Protection precisa de triagem. Qual evidência inicial é apropriada?",
     "options": [
-      "Apenas nome do tenant",
-      "Tema do portal",
-      "Número de workbooks",
+      "Somente etiquetas do dispositivo",
+      "Somente assunto dos e-mails",
+      "Somente volume de alertas por dia",
       "Histórico de entradas, aplicativo, dispositivo, local e IP"
     ],
     "answer": 3,
@@ -634,16 +634,16 @@ export const questions = [
   {
     "id": "SC200-046",
     "area": "resposta",
-    "prompt": "Onde verificar o histórico de uma remediação de e-mail iniciada pelo Explorer ou por investigação automática?",
+    "prompt": "O analista precisa examinar os cabeçalhos, anexos, URLs e vereditos de uma mensagem específica. Qual vista é a mais direta?",
     "options": [
-      "DCR",
-      "Action center",
-      "Device timeline somente",
-      "Workbooks"
+      "Threat Explorer para busca ampla",
+      "Página de entidade do e-mail",
+      "Action center de remediação",
+      "Microsoft Purview Audit"
     ],
     "answer": 1,
-    "explanation": "O histórico de remediações de e-mail aparece no Action center.",
-    "source": "https://learn.microsoft.com/en-us/defender-office-365/remediate-malicious-email-delivered-office-365"
+    "explanation": "A página de entidade reúne evidências e detalhes de uma mensagem individual.",
+    "source": "https://learn.microsoft.com/en-us/defender-office-365/mdo-email-entity-page"
   },
   {
     "id": "SC200-047",
@@ -830,16 +830,16 @@ export const questions = [
   {
     "id": "SC200-060",
     "area": "caca",
-    "prompt": "Qual recurso executa agregações frequentes e grava resultados resumidos em uma tabela do Analytics para consultas posteriores?",
+    "prompt": "Uma consulta retorna muitas colunas, mas a equipe quer manter somente Timestamp, DeviceName e FileName no resultado. Qual operador usar?",
     "options": [
-      "Live response",
-      "Playbook manual",
-      "EDiscovery search",
-      "Summary rule"
+      "extend Timestamp, DeviceName, FileName",
+      "summarize Timestamp, DeviceName, FileName",
+      "join Timestamp, DeviceName, FileName",
+      "project Timestamp, DeviceName, FileName"
     ],
     "answer": 3,
-    "explanation": "Summary rules persistem resultados agregados em tabelas de análise.",
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/datalake/kql-jobs-summary-rules-search-jobs"
+    "explanation": "project retorna apenas as colunas especificadas, na ordem indicada.",
+    "source": "https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/project-operator"
   },
   {
     "id": "SC200-061",
@@ -970,26 +970,26 @@ export const questions = [
   {
     "id": "SC200-070",
     "area": "ambiente",
-    "prompt": "Uma regra de detecção personalizada do Defender XDR é construída principalmente a partir de quê?",
+    "prompt": "O SOC precisa receber e-mail quando surgir um incidente de uma fonte e gravidade específicas no Defender XDR. O que configurar?",
     "options": [
-      "Planilha de incidentes",
-      "Consulta de caça avançada",
-      "Backup do dispositivo",
-      "Resultado do eDiscovery"
+      "Regra de ajuste de alertas",
+      "Regra de notificação de incidentes",
+      "Detecção personalizada sem destinatários",
+      "Parâmetro de workbook"
     ],
     "answer": 1,
-    "explanation": "A regra executa uma consulta de advanced hunting em intervalos.",
-    "source": "https://learn.microsoft.com/en-us/defender-xdr/custom-detection-rules"
+    "explanation": "A notificação de incidentes pode usar filtros como fonte e gravidade e enviar aos destinatários definidos.",
+    "source": "https://learn.microsoft.com/en-us/defender-xdr/m365d-notifications-incidents"
   },
   {
     "id": "SC200-071",
     "area": "ambiente",
     "prompt": "Quando uma detecção personalizada encontra eventos correspondentes, o que ela pode gerar?",
     "options": [
-      "Apenas uma imagem PNG",
-      "Novo tenant",
+      "Apenas uma consulta salva",
+      "Apenas um workbook",
       "Alertas e ações de resposta configuradas",
-      "Certificado TLS"
+      "Apenas um conector de dados"
     ],
     "answer": 2,
     "explanation": "A regra pode gerar alertas e disparar ações de resposta conforme a configuração.",
@@ -1056,9 +1056,9 @@ export const questions = [
     "area": "ambiente",
     "prompt": "Qual é a finalidade principal da interrupção automática de ataques no Defender XDR?",
     "options": [
-      "Criar dashboards estéticos",
-      "Renovar licenças",
-      "Substituir retenção de logs",
+      "Classificar alertas sem agir sobre entidades",
+      "Agregar logs históricos para relatórios",
+      "Criar recomendações de postura sem contenção",
       "Conter rapidamente entidades comprometidas durante ataques de alta confiança"
     ],
     "answer": 3,
@@ -1127,9 +1127,9 @@ export const questions = [
     "prompt": "Para executar um playbook somente em incidentes de alta gravidade, o que combinar na regra de automação?",
     "options": [
       "Gatilho, condição de gravidade e ação de playbook",
-      "Apenas nome do workspace",
-      "Somente cor da etiqueta",
-      "Apenas período de retenção"
+      "Somente o gatilho de criação do incidente",
+      "Somente a condição de gravidade",
+      "Somente o playbook sem regra de automação"
     ],
     "answer": 0,
     "explanation": "A regra avalia condições antes de executar ações.",
@@ -1278,16 +1278,16 @@ export const questions = [
   {
     "id": "SC200-092",
     "area": "ambiente",
-    "prompt": "A equipe precisa de um painel visual compartilhável que combine consultas e métricas de logs do Sentinel. Qual recurso criar?",
+    "prompt": "O analista quer trocar o período exibido em vários gráficos de um workbook sem editar cada consulta. Qual componente adicionar?",
     "options": [
-      "DCR",
-      "Isolate device",
-      "eDiscovery case",
-      "Workbook"
+      "Regra analítica NRT",
+      "DCR para cada gráfico",
+      "Filtro KQL fixo em cada consulta",
+      "Parâmetro de intervalo de tempo"
     ],
     "answer": 3,
-    "explanation": "Workbooks apresentam dados e visualizações de monitoramento.",
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/monitor-your-data"
+    "explanation": "Parâmetros permitem que o usuário altere o intervalo e o reutilize nas visualizações vinculadas.",
+    "source": "https://learn.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-parameters"
   },
   {
     "id": "SC200-093",
@@ -1306,16 +1306,16 @@ export const questions = [
   {
     "id": "SC200-094",
     "area": "ambiente",
-    "prompt": "A equipe quer conservar grande volume de dados para análise histórica com custo adequado. Qual camada considerar?",
+    "prompt": "O Defender for Endpoint coleta a telemetria padrão, mas o SOC precisa capturar eventos específicos com filtros e enviá-los ao Sentinel. Qual recurso usar?",
     "options": [
-      "Apenas regras NRT",
-      "Data lake",
-      "Live response",
-      "Threat Explorer"
+      "Regra de detecção personalizada do Defender XDR",
+      "Regra de coleta personalizada do Defender for Endpoint",
+      "Workbook do Sentinel",
+      "Regra de ajuste de alertas"
     ],
     "answer": 1,
-    "explanation": "O data lake é direcionado a retenção extensa e investigação histórica.",
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/manage-data-overview"
+    "explanation": "A coleta personalizada adiciona eventos filtrados à telemetria padrão e os encaminha ao workspace do Sentinel.",
+    "source": "https://learn.microsoft.com/en-us/defender-endpoint/custom-data-collection"
   },
   {
     "id": "SC200-095",
@@ -1334,40 +1334,40 @@ export const questions = [
   {
     "id": "SC200-096",
     "area": "ambiente",
-    "prompt": "Uma consulta KQL deve rodar periodicamente e gerar alertas quando a contagem ultrapassar um limiar. Qual regra criar?",
+    "prompt": "A equipe quer e-mail apenas para alertas de gravidade alta em grupos de dispositivos definidos. O que configurar?",
     "options": [
-      "Workbook sem consulta",
-      "ASR exclusion",
-      "Live response session",
-      "Scheduled analytics rule"
+      "Notificação de atualização de threat analytics",
+      "Regra de notificação de incidentes sem filtro de dispositivo",
+      "Regra de supressão de alertas",
+      "Regra de notificação de alertas com gravidade e escopo de dispositivos"
     ],
     "answer": 3,
-    "explanation": "A regra agendada permite definir frequência, consulta e limiar.",
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/scheduled-rules-overview"
+    "explanation": "Notificações de alerta aceitam filtros de gravidade e grupos de dispositivos, além dos destinatários.",
+    "source": "https://learn.microsoft.com/en-us/defender-xdr/configure-email-notifications"
   },
   {
     "id": "SC200-097",
     "area": "ambiente",
-    "prompt": "Um incidente precisa acionar um fluxo que consulte uma API externa e publique uma atualização no ticket. Que tecnologia sustenta um playbook do Sentinel?",
+    "prompt": "Duas regras de automação podem alterar o mesmo incidente no Sentinel. Que configuração ajuda a controlar qual delas atua primeiro?",
     "options": [
-      "Azure Logic Apps",
-      "Windows Event Forwarding",
-      "KQL join",
-      "Microsoft Graph activity log"
+      "Ordem ou prioridade de execução das regras",
+      "Tipo de gatilho da regra",
+      "Gravidade usada na condição",
+      "Intervalo de retenção do incidente"
     ],
     "answer": 0,
-    "explanation": "Playbooks do Sentinel são fluxos do Logic Apps.",
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/automation/run-playbooks"
+    "explanation": "As regras de automação são executadas sequencialmente na ordem definida.",
+    "source": "https://learn.microsoft.com/en-us/azure/sentinel/create-manage-use-automation-rules"
   },
   {
     "id": "SC200-098",
     "area": "ambiente",
     "prompt": "Um analista consegue ver incidentes, mas não executar manualmente um playbook. Qual área deve ser revisada?",
     "options": [
-      "Idioma do navegador",
+      "Configuração de retenção das tabelas",
       "Permissões do Sentinel e do recurso Logic App",
-      "Tamanho da janela",
-      "Nome do dispositivo"
+      "Tempo limite da consulta analítica",
+      "Grupo de dispositivos do Endpoint"
     ],
     "answer": 1,
     "explanation": "A execução manual depende de permissões sobre incidente e playbook.",
@@ -1378,10 +1378,10 @@ export const questions = [
     "area": "resposta",
     "prompt": "No Defender for Cloud, qual atributo deve pesar na triagem inicial de vários alertas?",
     "options": [
-      "Cor do portal",
-      "Ordem alfabética do título",
+      "Somente o horário de criação",
+      "Somente o status atual",
       "Gravidade do alerta e recurso afetado",
-      "Número de workbooks"
+      "Somente o título do alerta"
     ],
     "answer": 2,
     "explanation": "A triagem considera gravidade, contexto e recursos afetados.",
@@ -1420,10 +1420,10 @@ export const questions = [
     "area": "resposta",
     "prompt": "A investigação confirma que um alerta do Defender for Cloud reflete atividade esperada. O que verificar antes de suprimir ocorrências semelhantes?",
     "options": [
-      "Apenas a cor da severidade",
+      "Suprimir todos os alertas da assinatura",
       "Escopo e características precisas da atividade",
-      "Número de perguntas do exame",
-      "Nome do navegador"
+      "Reduzir a gravidade sem validar a causa",
+      "Encerrar a coleta da fonte"
     ],
     "answer": 1,
     "explanation": "Supressão deve ser específica após validação da causa benigna.",
@@ -1504,9 +1504,9 @@ export const questions = [
     "area": "resposta",
     "prompt": "Qual seção de um alerta do Defender for Identity mostra a sequência e as entidades envolvidas?",
     "options": [
-      "Billing history",
-      "Data lake retention",
-      "ASR exclusions",
+      "Alert graph",
+      "Comments & history",
+      "Alert details",
       "What happened"
     ],
     "answer": 3,
@@ -1546,10 +1546,10 @@ export const questions = [
     "area": "resposta",
     "prompt": "Um mesmo ataque envolve e-mail, identidade e endpoint. Qual vantagem de investigar o incidente correlacionado no Defender XDR?",
     "options": [
-      "Eliminar necessidade de evidência",
-      "Converter logs em licenças",
+      "Dispensar a investigação de entidades",
+      "Tratar todos os alertas como verdadeiros",
       "Relacionar alertas e entidades em uma história única",
-      "Substituir todas as respostas humanas"
+      "Executar automaticamente todas as remediações"
     ],
     "answer": 2,
     "explanation": "A correlação reúne sinais de vários domínios para triagem.",
@@ -1560,9 +1560,9 @@ export const questions = [
     "area": "resposta",
     "prompt": "Uma resposta guiada do Security Copilot recomenda classificar um incidente. A que categoria de recomendação isso pertence?",
     "options": [
-      "Retention",
-      "Ingestion",
-      "Billing",
+      "Containment",
+      "Investigation",
+      "Remediation",
       "Triage"
     ],
     "answer": 3,
@@ -1602,10 +1602,10 @@ export const questions = [
     "area": "resposta",
     "prompt": "Um botão de resposta guiada aparece desabilitado para o analista. Qual causa documentada deve ser checada?",
     "options": [
-      "Tamanho da tela",
-      "Nome do incidente",
+      "Ausência de incidentes semelhantes",
+      "Ordem dos cartões de recomendação",
       "Permissão RBAC insuficiente",
-      "Ordem dos cartões"
+      "Falta de um workbook no Sentinel"
     ],
     "answer": 2,
     "explanation": "Ações indisponíveis podem refletir permissões insuficientes.",
@@ -1644,10 +1644,10 @@ export const questions = [
     "area": "resposta",
     "prompt": "A interrupção automática isolou um dispositivo. O que o analista deve verificar no incidente?",
     "options": [
-      "Apenas o nome do produto",
+      "Apenas a data de onboarding do dispositivo",
       "Ação executada, entidade afetada e escopo residual do ataque",
-      "Somente o tema do portal",
-      "Número de páginas do workbook"
+      "Fechar o incidente sem avaliar outras entidades",
+      "Liberar a contenção antes de investigar"
     ],
     "answer": 1,
     "explanation": "Contenção automática exige avaliação do resultado e investigação do restante do ataque.",
@@ -1726,16 +1726,16 @@ export const questions = [
   {
     "id": "SC200-124",
     "area": "resposta",
-    "prompt": "Qual ação produz dados para análise forense sem exigir uma sessão interativa de comandos no endpoint?",
+    "prompt": "O Defender XDR conteve ativos durante um ataque. Onde o analista vê um resumo das ações no contexto do incidente?",
     "options": [
-      "Live response",
-      "Delete device",
-      "Summary rule",
-      "Collect investigation package"
+      "Pacote de investigação de um único endpoint",
+      "Workbook de ingestão do Sentinel",
+      "Registro de configuração da DCR",
+      "Cartão de resumo da interrupção automática no incidente"
     ],
     "answer": 3,
-    "explanation": "O pacote reúne evidências para análise posterior.",
-    "source": "https://learn.microsoft.com/en-us/defender-xdr/entity-page-device"
+    "explanation": "O cartão do incidente mostra as ações de interrupção e os ativos relacionados.",
+    "source": "https://learn.microsoft.com/en-us/defender-xdr/autoad-results"
   },
   {
     "id": "SC200-125",
@@ -1743,9 +1743,9 @@ export const questions = [
     "prompt": "A linha do tempo mostra um processo iniciado logo após download de anexo. Que contexto investigar em seguida?",
     "options": [
       "Processo pai, arquivo, usuário e conexões relacionadas",
-      "Apenas fuso horário do portal",
-      "Cor da severidade",
-      "Nome do workbook"
+      "Somente o hash do anexo",
+      "Somente o remetente da mensagem",
+      "Somente a gravidade do alerta"
     ],
     "answer": 0,
     "explanation": "Relações entre processo, arquivo, usuário e rede ajudam a reconstruir a cadeia.",
@@ -1819,7 +1819,7 @@ export const questions = [
     ],
     "answer": 1,
     "explanation": "O gerenciamento do caso mantém rastreabilidade da resposta colaborativa.",
-    "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-200"
+    "source": "https://learn.microsoft.com/en-us/defender-xdr/investigate-incident-cases"
   },
   {
     "id": "SC200-131",
@@ -2006,30 +2006,30 @@ export const questions = [
   {
     "id": "SC200-144",
     "area": "caca",
-    "prompt": "Uma hipótese envolve processos que abriram conexões para um IP suspeito. Qual tabela da caça avançada é o ponto inicial mais direto?",
+    "prompt": "Uma hipótese de phishing parte de uma URL presente no corpo ou anexo de e-mails. Qual tabela da caça avançada contém essas URLs?",
     "options": [
       "EmailEvents",
-      "DeviceFileEvents",
-      "IdentityInfo",
-      "DeviceNetworkEvents"
+      "EmailAttachmentInfo",
+      "DeviceNetworkEvents",
+      "EmailUrlInfo"
     ],
     "answer": 3,
-    "explanation": "Ela registra eventos de conexão de rede de endpoints.",
-    "source": "https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-schema-tables"
+    "explanation": "EmailUrlInfo registra URLs extraídas de mensagens e anexos processados pelo Defender for Office 365.",
+    "source": "https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-emailurlinfo-table"
   },
   {
     "id": "SC200-145",
     "area": "caca",
-    "prompt": "Para relacionar remetente, destinatário e mensagem em uma campanha de phishing, qual tabela da caça avançada iniciar?",
+    "prompt": "A equipe quer caçar mensagens que carregaram um arquivo anexo identificado por hash. Qual tabela contém informações dos anexos?",
     "options": [
+      "EmailAttachmentInfo",
+      "EmailUrlInfo",
       "EmailEvents",
-      "DeviceProcessEvents",
-      "AzureActivity",
-      "Syslog"
+      "DeviceProcessEvents"
     ],
     "answer": 0,
-    "explanation": "EmailEvents fornece metadados de mensagens e estado de entrega.",
-    "source": "https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-emailevents-table"
+    "explanation": "EmailAttachmentInfo contém dados de anexos, incluindo nome e hashes quando disponíveis.",
+    "source": "https://learn.microsoft.com/en-us/defender-xdr/advanced-hunting-emailattachmentinfo-table"
   },
   {
     "id": "SC200-146",
@@ -2090,15 +2090,15 @@ export const questions = [
   {
     "id": "SC200-150",
     "area": "caca",
-    "prompt": "Um grande volume de eventos deve ser condensado regularmente para consultas rápidas sobre tendências. Qual mecanismo do Sentinel usar?",
+    "prompt": "A consulta deve acrescentar Duration = EndTime - StartTime sem descartar as colunas originais. Qual operador usar?",
     "options": [
-      "Isolate device",
-      "Summary rule",
-      "Alert tuning",
-      "eDiscovery case"
+      "project",
+      "extend",
+      "summarize",
+      "where"
     ],
     "answer": 1,
-    "explanation": "Summary rules geram tabelas agregadas a partir de dados de alto volume.",
-    "source": "https://learn.microsoft.com/en-us/azure/sentinel/datalake/kql-jobs-summary-rules-search-jobs"
+    "explanation": "extend adiciona uma coluna calculada ao conjunto de resultados e mantém as demais colunas.",
+    "source": "https://learn.microsoft.com/azure/data-explorer/kusto/query/extendoperator"
   }
 ];
